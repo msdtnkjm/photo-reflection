@@ -1,0 +1,17 @@
+{
+  "name": "写真で一日をふりかえる",
+  "short_name": "ふりかえり",
+  "description": "ピンときた写真を手がかりに、一日を前向きな物語にしてふりかえる内省アプリ",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf4ee",
+  "theme_color": "#fbf4ee",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

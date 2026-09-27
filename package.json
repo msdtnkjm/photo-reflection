@@ -1,0 +1,12 @@
+{
+  "name": "photo-reflection",
+  "version": "1.0.0",
+  "description": "写真で一日をふりかえる内省アプリ（PWA）",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --test test/*.test.js"
+  },
+  "license": "MIT"
+}
