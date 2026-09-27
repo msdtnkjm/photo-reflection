@@ -2,7 +2,7 @@
 // 設計方針：フレームワークなしの素のJS。状態(state)を1か所に持ち、render()で画面を丸ごと描き直すシンプル構成。
 // サーバーは持たない。写真はスマホからPicsumへ直接取りにいき、記録と写真はスマホの中（IndexedDB）に保存する。
 
-import { createPhotoSource } from './photos.js';
+import { createPhotoSource, PER_PAGE } from './photos.js';
 import { sanitizeRecord, photoIds, displayDate, byNewest } from './records.js';
 import * as db from './db.js';
 import { buildBackup, parseBackup, backupFileName } from './backup.js';
@@ -256,7 +256,7 @@ function photoPicker() {
   let grid;
   if (s.loading) {
     // 読み込み中はふわっと光る仮の枠を出す
-    grid = `<div class="grid">${'<div class="thumb skeleton"></div>'.repeat(9)}</div>`;
+    grid = `<div class="grid">${'<div class="thumb skeleton"></div>'.repeat(PER_PAGE)}</div>`;
   } else if (s.error) {
     grid = `<p class="error">${esc(s.error)}</p>`;
   } else if (!s.photos.length) {

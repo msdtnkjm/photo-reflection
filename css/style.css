@@ -128,7 +128,7 @@ button:disabled { opacity: .4; cursor: not-allowed; }
 .picker-foot { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-top: 14px; font-size: .9rem; }
 .picker-foot .muted { font-size: .85rem; }
 
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .thumb {
   position: relative; padding: 0; border: 0; border-radius: 16px; overflow: hidden;
   background: var(--accent-soft); aspect-ratio: 4 / 3;
@@ -258,7 +258,6 @@ textarea:focus { outline: none; border-color: var(--accent); background: #fff; b
 @media (max-width: 600px) {
   .card { padding: 20px 16px; }
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .grid .thumb:last-child:nth-child(odd) { grid-column: span 2; aspect-ratio: 8 / 3; }
   .nav .primary, .nav .ghost { padding: 12px 20px; }
   .strip { grid-template-columns: repeat(2, 1fr); }
   .mini { grid-template-columns: 92px 1fr; }

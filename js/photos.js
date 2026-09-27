@@ -4,7 +4,8 @@
 // - 写真は番号(ID)付きのURLで扱う（Picsum側の写真が増減しても同じ写真を指し続ける）
 
 const PICSUM = 'https://picsum.photos';
-export const PER_PAGE = 9;
+// スマホは2列×4段、PCは4列×2段できれいにそろう枚数
+export const PER_PAGE = 8;
 export const SIZE = { thumb: [400, 300], full: [1080, 810], save: [600, 450] };
 const POOL_CACHE_KEY = 'photo-reflection-pool';
 const POOL_CACHE_DAYS = 7;

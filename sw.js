@@ -3,7 +3,7 @@
 // - Googleフォント …「保存分があればそれ」。一度読めば圏外でも同じ見た目
 // - Picsumの写真 … 何もしない（履歴の写真はIndexedDBに保存済みのものを使う）
 
-const CACHE = 'photo-reflection-v1';
+const CACHE = 'photo-reflection-v2';
 const SHELL = [
   './',
   './index.html',
@@ -14,8 +14,9 @@ const SHELL = [
   './js/db.js',
   './js/backup.js',
   './manifest.webmanifest',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
+  './icons/app-192.png',
+  './icons/app-512.png',
+  './icons/icon.svg',
 ];
 
 self.addEventListener('install', (event) => {

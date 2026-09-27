@@ -34,10 +34,11 @@ test('写真は番号付きURLで扱い、撮影者名とUnsplashのページを
   assert.strictEqual(picsumUrl('3', [600, 450]), 'https://picsum.photos/id/3/600/450.jpg');
 });
 
-test('ランダムに9枚、重複なしで選ぶ', () => {
+test('ランダムに8枚（偶数）、重複なしで選ぶ', () => {
+  assert.strictEqual(PER_PAGE % 2, 0);
   const picked = pickRandom(pool, PER_PAGE);
-  assert.strictEqual(picked.length, 9);
-  assert.strictEqual(new Set(picked.map((p) => p.id)).size, 9);
+  assert.strictEqual(picked.length, 8);
+  assert.strictEqual(new Set(picked.map((p) => p.id)).size, 8);
 });
 
 test('この日に見せた写真・選んだ写真は出さない（Setでも配列でも受けつける）', () => {
@@ -67,7 +68,7 @@ test('写真リストは端末に1週間覚えておき、そのあいだは取�
   const f2 = fakePicsum();
   const photos = await createPhotoSource({ fetchFn: f2, storage, now: () => t }).randomPhotos();
   assert.strictEqual(f2.calls.length, 0);
-  assert.strictEqual(photos.length, 9);
+  assert.strictEqual(photos.length, PER_PAGE);
 
   // 8日後は取りなおす
   t += 2 * 86400000;
@@ -82,7 +83,7 @@ test('写真リストが取れなかったら、次に呼んだときに取り�
   const src = createPhotoSource({ fetchFn: f, storage: null });
   await assert.rejects(src.randomPhotos(), /写真リストを取得できませんでした/);
   fail = false;
-  assert.strictEqual((await src.randomPhotos()).length, 9);
+  assert.strictEqual((await src.randomPhotos()).length, PER_PAGE);
 });
 
 test('保存用の写真は600×450で取得する', async () => {

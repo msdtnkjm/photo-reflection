@@ -27,7 +27,7 @@
 
 ## 写真について
 
-- [Lorem Picsum](https://picsum.photos) の全写真リスト（約1,000枚）からランダムに9枚出す。元の写真は [Unsplash](https://unsplash.com) のもので、Unsplash ライセンス（商用利用可）
+- [Lorem Picsum](https://picsum.photos) の全写真リスト（約1,000枚）からランダムに8枚出す（スマホは2列×4段、PCは4列×2段）。元の写真は [Unsplash](https://unsplash.com) のもので、Unsplash ライセンス（商用利用可）
 - キーワード検索はしない。「なぜこの写真にピンときたのか」をこじつけで考えること自体が、リフレーミングの入り口になるため
 - 同じ日の中では、選んだ写真は二度と出さない。一度見せた写真も、候補が尽きるまでは出さない
 - 撮影者名と元ページへのリンクを表示する
@@ -42,7 +42,7 @@
 | `js/records.js` | 記録の形の統一、日付の表示 |
 | `js/db.js` | 端末内（IndexedDB）への保存 |
 | `js/backup.js` | 書き出し／読みこみ |
-| `sw.js` / `manifest.webmanifest` / `icons/` | PWA（オフライン対応、インストール） |
+| `sw.js` / `manifest.webmanifest` / `icons/` | PWA（オフライン対応、インストール）。アイコンの元絵は `icons/icon.svg` |
 
 サーバーを持たない静的サイトなので、GitHub Pages などにそのまま置ける。
 
